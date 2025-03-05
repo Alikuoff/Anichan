@@ -1,0 +1,13 @@
+# netlify.toml
+[build]
+  publish = "public"
+  command = "npm run build"
+
+[dev]
+  command = "npm run start"
+  port = 3000
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

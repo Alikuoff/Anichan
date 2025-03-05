@@ -7,6 +7,7 @@ import { Checkbox } from "@/components/ui/checkbox"
 import { Label } from "@/components/ui/label"
 import { Separator } from "@/components/ui/separator"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import React from "react"
 
 export default function AnimeFilters() {
   const router = useRouter()
@@ -64,12 +65,12 @@ export default function AnimeFilters() {
 
   const years = ["2023", "2022", "2021", "2020", "2019", "2018", "2017", "2016", "2015"]
 
-  const toggleGenre = (genreId: string) => {
-    setSelectedGenres((prev) => (prev.includes(genreId) ? prev.filter((g) => g !== genreId) : [...prev, genreId]))
+  const toggleGenre = (genreId: string): void => {
+    setSelectedGenres((prev: string[]) => (prev.includes(genreId) ? prev.filter((g: string) => g !== genreId) : [...prev, genreId]))
   }
 
-  const toggleYear = (year: string) => {
-    setSelectedYears((prev) => (prev.includes(year) ? prev.filter((y) => y !== year) : [...prev, year]))
+  const toggleYear = (year: string): void => {
+    setSelectedYears((prev: string[]) => (prev.includes(year) ? prev.filter((y: string) => y !== year) : [...prev, year]))
   }
 
   const applyFilters = () => {
